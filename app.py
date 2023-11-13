@@ -16,6 +16,10 @@ from transformers import AutoModel, AutoTokenizer, LlamaForCausalLM, LlamaTokeni
 from sklearn.metrics import f1_score, confusion_matrix, accuracy_score, classification_report, \
     precision_recall_fscore_support, precision_score, recall_score
 
+from transformers import LlamaTokenizer, LlamaForCausalLM
+tokenizer = LlamaTokenizer.from_pretrained('klyang/MentaLLaMA-chat-7B')
+model = LlamaForCausalLM.from_pretrained('klyang/MentaLLaMA-chat-7B', device_map='auto')
+
 def load_instruction_test_data(directory_contents):
     test_data = {}
     for root in directory_contents:
