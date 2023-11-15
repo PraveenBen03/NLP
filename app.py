@@ -267,6 +267,8 @@ def calculate_f1(generated, goldens):
 
 
 # Get the current directory
+device = torch.device("cuda:0" if torch.cuda.is_available() and args['cuda'] is True else "cpu")
+model.to(device)
 current_directory = os.getcwd()
 
 # List all elements in the current directory
