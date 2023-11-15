@@ -44,7 +44,8 @@ def generate_response(test_data):
         goldens[dataset_name]  = golden
         responses = []
 
-        for i in range(0, len(queries)):
+        for i in range(0, min(500,len(queries))):
+            print(dataset_name,i)
             batch_data = queries[i]
             #print(batch_data[:2])
             inputs = tokenizer(batch_data, return_tensors="pt")
