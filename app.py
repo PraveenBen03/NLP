@@ -43,7 +43,9 @@ def generate_response(test_data):
         queries, golden = test_data[dataset_name]
         goldens[dataset_name]  = golden
         responses = []
-
+        l = ["SAD","MultiWD"]
+        if dataset_name in l : 
+            continue
         for i in range(0, min(500,len(queries))):
             print(dataset_name,i)
             batch_data = queries[i]
